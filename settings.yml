@@ -1,0 +1,7 @@
+global:
+    epoch: 10
+    tmp_path: tmp
+
+tf-serving:
+    export_dir: tf-serving
+    version_number: 1
