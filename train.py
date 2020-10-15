@@ -2,12 +2,19 @@
 import os
 import yaml
 import argparse
+import numpy as np
 import tensorflow as tf
+from typing import Tuple
 
 from model import SimpleCNN
 
 
-def parse_args():
+def parse_args() -> argparse.Namespace:
+    """引数解析
+
+    Returns:
+        argparse.Namespace: 引数情報
+    """
     parser = argparse.ArgumentParser(
         prog="train.py",
         description="tensorflow-serving training script",
@@ -20,8 +27,12 @@ def parse_args():
     return parser.parse_args()
 
 
-def load_dataset():
+def load_dataset() -> Tuple[Tuple[np.array, np.array], Tuple[np.array, np.array]]:
+    """データセットをロード
 
+    Returns:
+        Tuple[Tuple[np.array, np.array], Tuple[np.array, np.array]]: trainデータとtestデータ
+    """
     fashion_mnist = tf.keras.datasets.fashion_mnist
     (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
 
