@@ -30,7 +30,7 @@ $pip install -r requirements.txt
    ```
 
 
-# Tf-Serving
+## Tf-Serving
 1. Modify docker_start.sh
   ```
   MODEL_NAME="tf-serving" # = settings.yml's export_dir
@@ -40,7 +40,7 @@ $pip install -r requirements.txt
 $bash docker_start.sh
 ```
 
-# Test
+## Test
 ```
 $python test_post.py --model_name {settings.yml's export_dir} --version {version_num}
 ```
